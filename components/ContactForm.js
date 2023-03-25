@@ -27,8 +27,8 @@ function ContactForm() {
     };
   
   
-    // After filling the data of form the submit button
-    // that creates Post API
+    // After filling the data of form, the submit button
+    // creates Post API using fetch
     const handleSubmit = async () => {
       const formData = { name, email, petName, petType, petBreed, reasonForVisit, prefferedDateForAppointment };
       try {
