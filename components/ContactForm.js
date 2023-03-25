@@ -70,20 +70,21 @@ function ContactForm() {
       <div className="max-w-xl mx-auto">
       {currentStep === 1 && (
         <div className="space-y-4">
-          <label htmlFor="name" className="block font-medium text-gray-700">Name:</label>
+          <h2 className="text-lg font-medium mb-4">Step 1: Owner Information</h2>
+          <label htmlFor="name" className="block text-gray-700 font-medium mb-1">Name:</label>
           <input
             type="text"
             id="name"
-            className="block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50"
+            className="w-full px-4 py-2 border border-gray-400 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             value={name}
             onChange={(event) => setName(event.target.value)}
           />
 
-          <label htmlFor="email" className="block font-medium text-gray-700">Email:</label>
+          <label htmlFor="email" className="block text-gray-700 font-medium mb-1">Email:</label>
           <input
             type="email"
             id="email"
-            className="block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50"
+            className="w-full px-4 py-2 border border-gray-400 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             value={email}
             onChange={(event) => setEmail(event.target.value)}
           />
@@ -97,10 +98,9 @@ function ContactForm() {
       )}
   
       {currentStep === 2 && (
-      <div className="bg-gray-100 rounded-lg p-4">
+      <div className="space-y-4">
         <h2 className="text-lg font-medium mb-4">Step 2: Pet Information</h2>
-        <div className="space-y-2">
-          <div>
+        
             <label htmlFor="pet-name" className="block text-gray-700 font-medium mb-1">
               Pet Name:
             </label>
@@ -111,9 +111,8 @@ function ContactForm() {
               onChange={(event) => setPetName(event.target.value)}
               className="w-full px-4 py-2 border border-gray-400 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             />
-          </div>
-
-          <div>
+          
+          
             <label htmlFor="pet-type" className="block text-gray-700 font-medium mb-1">
               Pet Type:
             </label>
@@ -124,9 +123,7 @@ function ContactForm() {
               onChange={(event) => setPetType(event.target.value)}
               className="w-full px-4 py-2 border border-gray-400 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             />
-          </div>
-
-          <div>
+      
             <label htmlFor="pet-breed" className="block text-gray-700 font-medium mb-1">
               Pet Breed:
             </label>
@@ -137,8 +134,7 @@ function ContactForm() {
               onChange={(event) => setPetBreed(event.target.value)}
               className="w-full px-4 py-2 border border-gray-400 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             />
-          </div>
-        </div>
+        
 
         <div className="mt-4 space-x-4">
           <button
@@ -161,30 +157,36 @@ function ContactForm() {
 
     {currentStep === 3 && (
       <div className="final-step">
-        <label htmlFor="appointment-reason">Reason for Appointment:</label>
-        <textarea
-          id="appointment-reason"
-          value={reasonForVisit}
-          onChange={(event) => setReasonForVisit(event.target.value)}
-        />
 
-        <label htmlFor="set-appointment">Set Apointment</label>
-        <input 
-          type="date"
-          value={prefferedDateForAppointment}
-          onChange={(event) => setPrefferedDate(event.target.value)}
-          id="set-appointment"
-        />
+          <h2 className="text-lg font-medium mb-4">Step 2: Appointment details</h2>
 
-        <button onClick={handlePreviousStep}>Previous</button>
-        <button onClick={handleSubmit} disabled={!validateStepThree()} className="inline-flex items-center justify-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-            Submit
-        </button>
+          <label htmlFor="appointment-reason" className="block text-gray-700 font-medium mb-1">Reason for Appointment:</label>
+          <textarea
+            id="appointment-reason"
+            value={reasonForVisit}
+            onChange={(event) => setReasonForVisit(event.target.value)}
+          />
 
-        
-      </div>
-    )}
-      </div>
+          <label htmlFor="set-appointment" className="block text-gray-700 font-medium mb-1">Set Apointment</label>
+          <input 
+            type="date"
+            value={prefferedDateForAppointment}
+            onChange={(event) => setPrefferedDate(event.target.value)}
+            id="set-appointment"
+            className="w-full px-4 py-2 border border-gray-400 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          />
+
+          <div className ="mt-4 space-x-4">
+              <button onClick={handlePreviousStep}>Previous</button>
+
+              <button onClick={handleSubmit} disabled={!validateStepThree()} className="inline-flex items-center justify-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                Submit
+              </button>
+
+          </div>
+        </div>
+      ) }
+    </div>
     );
   }
   

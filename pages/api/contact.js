@@ -1,7 +1,5 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
-// import {fo} from '@/components/ContactForm'
-
 export default function handler(req, res) {
   if (req.method === 'POST') {
     // handle POST request

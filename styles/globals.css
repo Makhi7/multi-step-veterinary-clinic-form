@@ -110,7 +110,7 @@ a {
   }
 }
 
-.final-step {
+/* .final-step {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -148,7 +148,7 @@ a {
 .final-step button:disabled {
   background-color: gray;
   cursor: not-allowed;
-}
+} */
 
 .space-y-4 > * + * {
   margin-top: 1.5rem;
