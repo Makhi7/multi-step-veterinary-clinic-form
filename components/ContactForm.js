@@ -178,7 +178,13 @@ function ContactForm() {
           />
 
           <div className ="mt-4 space-x-4">
-              <button onClick={handlePreviousStep}>Previous</button>
+            
+              <button
+                onClick={handlePreviousStep}
+                className="px-4 py-2 bg-gray-400 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-transparent"
+              >
+                Previous
+              </button>
 
               <button onClick={handleSubmit} disabled={!validateStepThree()} className="inline-flex items-center justify-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                 Submit
