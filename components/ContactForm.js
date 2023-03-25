@@ -162,9 +162,10 @@ function ContactForm() {
 
           <label htmlFor="appointment-reason" className="block text-gray-700 font-medium mb-1">Reason for Appointment:</label>
           <textarea
-            id="appointment-reason"
-            value={reasonForVisit}
-            onChange={(event) => setReasonForVisit(event.target.value)}
+              id="appointment-reason"
+              value={reasonForVisit}
+              onChange={(event) => setReasonForVisit(event.target.value)}
+              className="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
           />
 
           <label htmlFor="set-appointment" className="block text-gray-700 font-medium mb-1">Set Apointment</label>
