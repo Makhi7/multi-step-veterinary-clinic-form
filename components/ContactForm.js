@@ -42,6 +42,7 @@ function ContactForm() {
         const data = await response.json();
         console.log('Form data sent:', data);
         alert('Form submitted successfully!');
+        window.location.reload();
       } catch (error) {
         console.error('Error sending form data:', error);
         alert('Error submitting form data. Please try again later.');
